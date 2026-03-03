@@ -1,65 +1,105 @@
 import Image from "next/image";
 
+// Kleine Hilfskomponente für die Kommandozeilen-Eingabe
+const Prompt = ({ command }: { command: string }) => (
+    <div className="mt-8 mb-4">
+      <span className="text-[#169C9C] font-bold">root@sandrp.de</span>
+      <span className="text-zinc-500"> :~$ </span>
+      <span className="text-zinc-100 font-semibold">{command}</span>
+    </div>
+);
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      // Der Haupt-Container erzwingt einen dunklen Hintergrund, da Terminal-Seiten dunkel sein sollten
+      <div className="min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-[#169C9C] selection:text-black">
+
+        {/* Das "Terminal-Fenster" */}
+        <main className="w-full max-w-4xl flex flex-col">
+
+          {/* Terminal Header (Optional, wie bei Lina oben) */}
+          <div className="flex justify-between items-center border-b border-zinc-800 pb-2 mb-6 text-xs text-zinc-600">
+            <span>{new Date().toLocaleTimeString('de-DE')} (Europe/Berlin) | sandrp.de</span>
+            <span className="text-red-500 bg-red-500/10 px-2 py-0.5 rounded cursor-pointer hover:bg-red-500 hover:text-white transition-colors">x</span>
+          </div>
+
+          {/* ASCII Art Logo */}
+          <pre className="text-[#169C9C] text-xs sm:text-sm md:text-base leading-tight mb-8 overflow-x-auto">
+{`                     _                    _      
+ ___  __ _ _ __   __| |_ __ _ __       __| | ___ 
+/ __|/ _\` | '_ \\ / _\` | '__| '_ \\     / _\` |/ _ \\
+\\__ \\ (_| | | | | (_| | |  | |_) | _ | (_| |  __/
+|___/\\__,_|_| |_|\\__,_|_|  | .__/ (_) \\__,_|\\___|
+                           |_|               `}
+        </pre>
+
+          {/* --- SECTION: ABOUT ME --- */}
+          <Prompt command="glow about_me.md" />
+          <div className="border border-zinc-800 p-4 sm:p-6 relative rounded-sm bg-[#0a0a0a]">
+            {/* Label auf dem Rahmen */}
+            <span className="absolute -top-3 left-4 bg-[#050505] px-2 text-zinc-500 text-sm">
+            about_me.md
+          </span>
+
+            <div className="flex flex-col sm:flex-row gap-6 items-start">
+              {/* Profilbild Bereich */}
+              <div className="w-32 h-32 border border-[#169C9C] p-1 shrink-0 relative">
+                <Image
+                    src="/avatar.png" // Der Name deiner Datei im public-Ordner
+                    alt="Sandro Avatar"
+                    width={128}
+                    height={128}
+                    className="object-cover w-full h-full"
+                    priority
+                />
+              </div>
+
+              <div className="flex flex-col gap-4 w-full">
+                <div>
+                  <h1 className="text-xl font-bold text-white mb-1">Sandro</h1>
+                  <p className="text-zinc-400">Developer @ RWTH-Aachen | 18 Jahre alt | </p>
+                  <p className="text-zinc-400">Hobby-Developer @ SoulSMP</p>
+                  <p className="text-zinc-500 text-sm mt-1">Location: Aachen</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* --- SECTION: SOCIALS --- */}
+          <Prompt command="./socials.sh" />
+          <div className="flex flex-col gap-2 pl-2">
+            <a href="#" className="hover:text-[#169C9C] transition-colors w-max">
+              <span className="text-zinc-500 mr-4">[gh]</span> github.com/sandrpp
+            </a>
+            <a href="#" className="hover:text-[#169C9C] transition-colors w-max">
+              <span className="text-zinc-500 mr-4">[dc]</span> @sandrp
+            </a>
+            <a href="mailto:me@sandrp.de" className="hover:text-[#169C9C] transition-colors w-max">
+              <span className="text-zinc-500 mr-4">[mail]</span> me@sandrp.de
+            </a>
+            <a href="#" className="hover:text-[#169C9C] transition-colors w-max">
+              <span className="text-zinc-500 mr-4">[matrix]</span> @me:sandrp.de
+            </a>
+          </div>
+
+          {/* PGP KEY */}
+          <Prompt command="curl https://sandrp.de/pgp" />
+          <div className="flex justify-between items-center pl-2">
+            <span className="text-zinc-500 animate-pulse">Downloading...</span>
+            <a href="#" className="text-zinc-400 hover:text-white border-b border-transparent hover:border-white pb-0.5">
+              Download PGP ↓
+            </a>
+          </div>
+
+          {/* Platzhalter für die vielen kleinen "Webring" Buttons unten */}
+          <div className="mt-24 mb-12 flex flex-wrap gap-2 justify-center opacity-50 hover:opacity-100 transition-opacity">
+            {/* Hier kommen später die kleinen 88x31 px Bilder rein */}
+            <div className="w-[88px] h-[31px] border border-zinc-700 flex items-center justify-center text-[10px] text-zinc-600">BUTTON</div>
+            <div className="w-[88px] h-[31px] border border-zinc-700 flex items-center justify-center text-[10px] text-zinc-600">BUTTON</div>
+            <div className="w-[88px] h-[31px] border border-zinc-700 flex items-center justify-center text-[10px] text-zinc-600">BUTTON</div>
+          </div>
+
+        </main>
+      </div>
   );
 }

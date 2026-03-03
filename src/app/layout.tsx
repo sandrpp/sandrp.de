@@ -1,34 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "sandrp.de",
-  description: "Welcome to my side on the world wide web!",
+    title: "sandrp.de | Terminal",
+    description: "Sandros Portfolio",
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+                                       children,
+                                   }: Readonly<{
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    return (
+        <html lang="de">
+        <body className={`${jetbrainsMono.className} antialiased selection:bg-[#169C9C] selection:text-black`}>
         {children}
-      </body>
-    </html>
-  );
+        </body>
+        </html>
+    );
 }
