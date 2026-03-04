@@ -7,10 +7,6 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "sandrp.de",
     description: "Sandros Website",
-    icons: {
-        icon: "/favicon.ico",
-        apple: "/favicon.ico",
-    },
 };
 
 export default function RootLayout({
