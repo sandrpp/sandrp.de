@@ -138,6 +138,18 @@ export default function Home() {
                   style={{imageRendering: 'pixelated'}}
               />
             </a>
+            <a
+                href="https://www.youtube.com/LinusTechTips"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <img
+                  src="/banners/free_tech_tips.png"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
             <img
                 src="/banners/trans_rights.png"
                 width={88}
