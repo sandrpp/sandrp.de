@@ -92,11 +92,57 @@ export default function Home() {
           </div>
 
           {/* Platzhalter für die vielen kleinen "Webring" Buttons unten */}
-          <div className="mt-24 mb-12 flex flex-wrap gap-2 justify-center opacity-50 hover:opacity-100 transition-opacity">
-            {/* Hier kommen später die kleinen 88x31 px Bilder rein */}
-            <div className="w-[88px] h-[31px] border border-zinc-700 flex items-center justify-center text-[10px] text-zinc-600">BUTTON</div>
-            <div className="w-[88px] h-[31px] border border-zinc-700 flex items-center justify-center text-[10px] text-zinc-600">BUTTON</div>
-            <div className="w-[88px] h-[31px] border border-zinc-700 flex items-center justify-center text-[10px] text-zinc-600">BUTTON</div>
+          <div className="mt-24 mb-12 flex flex-wrap gap-2 justify-center">
+            <a
+                href="https://enjarai.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <img
+                  src="https://enjarai.dev/assets/my-button.png"
+                  alt="enjarai.dev"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
+            <img
+                src="/banners/trans_rights.png"
+                width={88}
+                height={31}
+                style={{imageRendering: 'pixelated'}}
+            />
+            <img
+                src="/banners/powered-by-debian.gif"
+                width={88}
+                height={31}
+                style={{imageRendering: 'pixelated'}}
+            />
+            <a
+                href="https://trans.fish/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <img
+                  src="/banners/flag-progress.png"
+                  alt="trans.fish"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
+            <a
+                href="https://github.com/gorhill/uBlock"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <img
+                  src="/banners/ublock-origin.png"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
           </div>
 
         </main>
