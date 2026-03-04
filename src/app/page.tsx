@@ -113,7 +113,20 @@ export default function Home() {
           {/* Platzhalter für die vielen kleinen "Webring" Buttons unten */}
           <div className="mt-24 mb-12 flex flex-wrap gap-2 justify-center">
             <a
-                href="https://enjarai.dev"
+                href="https://sandrp.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <img
+                  src="/banners/sandrp.png"
+                  alt="sandrp.de"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
+            <a
+                href="https://enjarai.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
             >
