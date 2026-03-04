@@ -227,6 +227,18 @@ export default function Home() {
                   style={{imageRendering: 'pixelated'}}
               />
             </a>
+            <a
+                href="https://lina.sh/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <img
+                  src="/banners/lina.gif"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
           </div>
 
         </main>
