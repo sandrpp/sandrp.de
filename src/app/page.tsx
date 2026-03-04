@@ -3,7 +3,7 @@ import Image from "next/image";
 // Kleine Hilfskomponente für die Kommandozeilen-Eingabe
 const Prompt = ({ command }: { command: string }) => (
     <div className="mt-8 mb-4">
-      <span className="text-[#169C9C] font-bold">root@sandrp.de</span>
+      <span className="text-[#d17780] font-bold">root@sandrp.de</span>
       <span className="text-zinc-500"> :~$ </span>
       <span className="text-zinc-100 font-semibold">{command}</span>
     </div>
@@ -12,7 +12,7 @@ const Prompt = ({ command }: { command: string }) => (
 export default function Home() {
   return (
       // Der Haupt-Container erzwingt einen dunklen Hintergrund, da Terminal-Seiten dunkel sein sollten
-      <div className="min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-[#169C9C] selection:text-black">
+      <div className="min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-[#bd4954] selection:text-black">
 
         {/* Das "Terminal-Fenster" */}
         <main className="w-full max-w-4xl flex flex-col">
@@ -24,7 +24,7 @@ export default function Home() {
           </div>
 
           {/* ASCII Art Logo */}
-          <pre className="text-[#169C9C] text-xs sm:text-sm md:text-base leading-tight mb-8 overflow-x-auto">
+          <pre className="text-[#873750] font-bold text-xs sm:text-sm md:text-base leading-tight mb-8 overflow-x-auto">
 {`                     _                    _      
  ___  __ _ _ __   __| |_ __ _ __       __| | ___ 
 / __|/ _\` | '_ \\ / _\` | '__| '_ \\     / _\` |/ _ \\
@@ -43,7 +43,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-6 items-start">
               {/* Profilbild Bereich */}
-              <div className="w-32 h-32 border border-[#169C9C] p-1 shrink-0 relative">
+              <div className="w-32 h-32 border border-[#bd4954] p-1 shrink-0 relative">
                 <Image
                     src="/avatar.png" // Der Name deiner Datei im public-Ordner
                     alt="Sandro Avatar"
@@ -68,16 +68,16 @@ export default function Home() {
           {/* --- SECTION: SOCIALS --- */}
           <Prompt command="./socials.sh" />
           <div className="flex flex-col gap-2 pl-2">
-            <a href="#" className="hover:text-[#169C9C] transition-colors w-max">
+            <a href="#" className="hover:text-[#d17780] transition-colors w-max">
               <span className="text-zinc-500 mr-4">[gh]</span> github.com/sandrpp
             </a>
-            <a href="#" className="hover:text-[#169C9C] transition-colors w-max">
+            <a href="#" className="hover:text-[#d17780] transition-colors w-max">
               <span className="text-zinc-500 mr-4">[dc]</span> @sandrp
             </a>
-            <a href="mailto:me@sandrp.de" className="hover:text-[#169C9C] transition-colors w-max">
+            <a href="mailto:me@sandrp.de" className="hover:text-[#d17780] transition-colors w-max">
               <span className="text-zinc-500 mr-4">[mail]</span> me@sandrp.de
             </a>
-            <a href="#" className="hover:text-[#169C9C] transition-colors w-max">
+            <a href="#" className="hover:text-[#d17780] transition-colors w-max">
               <span className="text-zinc-500 mr-4">[matrix]</span> @me:sandrp.de
             </a>
           </div>
