@@ -1,3 +1,5 @@
+"use client";
+import { useState } from 'react';
 import Image from "next/image";
 
 // Kleine Hilfskomponente für die Kommandozeilen-Eingabe
@@ -10,6 +12,14 @@ const Prompt = ({ command }: { command: string }) => (
 );
 
 export default function Home() {
+  const [copied, setCopied] = useState(false);
+  const bannerCode = `<a href="https://sandrp.de/" target="_blank"><img src="https://sandrp.de/banners/sandrp.png" alt="sandrp.de" width="88" height="31"></a>`;
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(bannerCode);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // Reset nach 2 Sek.
+  };
   return (
       // Der Haupt-Container erzwingt einen dunklen Hintergrund, da Terminal-Seiten dunkel sein sollten
       <div className="min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-[#bd4954] selection:text-black">
@@ -65,6 +75,8 @@ export default function Home() {
             </div>
           </div>
 
+
+
           {/* --- SECTION: SOCIALS --- */}
           <Prompt command="./socials.sh" />
           <div className="flex flex-col gap-2 pl-2">
@@ -108,6 +120,34 @@ export default function Home() {
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>
               </svg>
             </a>
+          </div>
+
+          <Prompt command="cat https://sandrp.de/banner.html" />
+
+          <div className=" border border-zinc-800 bg-[#0a0a0a] rounded-sm group">
+            <h3 className="p-1">My brand new Banner!</h3>
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <img
+                  src="/banners/sandrp.png"
+                  alt="sandrp.de banner"
+                  width={88}
+                  height={31}
+                  style={{ imageRendering: 'pixelated' }}
+                  className="p-1"
+              />
+              {/* HIER: min-w-0 hinzugefügt, damit der Container nicht ausbricht */}
+              <div className="w-full relative min-w-0">
+                <pre className="bg-black p-3 text-[10px] text-zinc-500 border border-zinc-900 overflow-x-auto font-mono">
+                  {bannerCode}
+                </pre>
+                <button
+                    onClick={handleCopy}
+                    className="absolute top-2 right-2 bg-zinc-900 hover:bg-[#d17780] hover:text-black text-zinc-400 px-2 py-1 text-[10px] uppercase font-bold transition-all border border-zinc-800"
+                >
+                  {copied ? 'Copied!' : 'Copy Code'}
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* Platzhalter für die vielen kleinen "Webring" Buttons unten */}
