@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Image from "next/image";
+import Oneko from "@/components/Oneko";
 
 // Kleine Hilfskomponente für die Kommandozeilen-Eingabe
 const Prompt = ({ command }: { command: string }) => (
@@ -23,7 +24,7 @@ export default function Home() {
   return (
       // Der Haupt-Container erzwingt einen dunklen Hintergrund, da Terminal-Seiten dunkel sein sollten
       <div className="min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-[#bd4954] selection:text-black">
-
+        <Oneko />
         {/* Das "Terminal-Fenster" */}
         <main className="w-full max-w-4xl flex flex-col">
 
@@ -67,7 +68,7 @@ export default function Home() {
               <div className="flex flex-col gap-4 w-full">
                 <div>
                   <h1 className="text-xl font-bold text-white mb-1">Sandro</h1>
-                  <p className="text-zinc-400">Developer @ RWTH-Aachen | 18 Jahre alt | </p>
+                  <p className="text-zinc-400">Developer @ RWTH-Aachen | 18 years old | </p>
                   <p className="text-zinc-400">Hobby-Developer @ SoulSMP</p>
                   <p className="text-zinc-500 text-sm mt-1">Location: Aachen</p>
                 </div>
@@ -124,25 +125,35 @@ export default function Home() {
 
           <Prompt command="cat https://sandrp.de/banner.html" />
 
-          <div className=" border border-zinc-800 bg-[#0a0a0a] rounded-sm group">
-            <h3 className="p-1">My brand new Banner!</h3>
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <img
-                  src="/banners/sandrp.png"
-                  alt="sandrp.de banner"
-                  width={88}
-                  height={31}
-                  style={{ imageRendering: 'pixelated' }}
-                  className="p-1"
-              />
-              {/* HIER: min-w-0 hinzugefügt, damit der Container nicht ausbricht */}
+          <div className="border border-zinc-800 bg-[#0a0a0a] rounded-sm overflow-hidden group">
+            <div className="p-3 border-b border-zinc-800 bg-zinc-900/50 flex justify-between items-center">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400">My brand new Banner!</h3>
+              <span className="text-[10px] font-mono text-zinc-600">88x31px</span>
+            </div>
+
+            <div className="p-4 flex flex-col md:flex-row items-center gap-6">
+              <div className="shrink-0">
+                <img
+                    src="/banners/sandrp.png"
+                    alt="sandrp.de banner"
+                    width={88}
+                    height={31}
+                    style={{ imageRendering: 'pixelated' }}
+                />
+              </div>
+
+              {/* Die Code-Box mit Padding-Rechts für den Button */}
               <div className="w-full relative min-w-0">
-                <pre className="bg-black p-3 text-[10px] text-zinc-500 border border-zinc-900 overflow-x-auto font-mono">
-                  {bannerCode}
-                </pre>
+      <pre className="bg-black p-3 pr-24 text-[10px] text-zinc-500 border border-zinc-900 overflow-x-auto font-mono scrollbar-thin scrollbar-thumb-zinc-800">
+        {bannerCode}
+      </pre>
                 <button
                     onClick={handleCopy}
-                    className="absolute top-2 right-2 bg-zinc-900 hover:bg-[#d17780] hover:text-black text-zinc-400 px-2 py-1 text-[10px] uppercase font-bold transition-all border border-zinc-800"
+                    className={`absolute top-2 right-2 px-3 py-1 text-[10px] uppercase font-bold transition-all border ${
+                        copied
+                            ? 'bg-[#d17780] text-black border-[#d17780]'
+                            : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780]'
+                    }`}
                 >
                   {copied ? 'Copied!' : 'Copy Code'}
                 </button>
