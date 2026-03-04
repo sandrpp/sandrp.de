@@ -94,7 +94,7 @@ export default function Home() {
               </svg>
               <div>
                 <span className="text-zinc-100 font-mono text-sm block">pgp.asc</span>
-                <span className="text-zinc-500 text-xs uppercase tracking-widest">Fingerprint: ...</span>
+                <span className="text-zinc-500 text-xs uppercase tracking-widest">Fingerprint: B55E E28C 143A C940 1CB2  65C0 A318 3B7B 8081 B136</span>
               </div>
             </div>
 
