@@ -83,7 +83,7 @@ export default function Home() {
           </div>
 
           {/* --- SECTION: PGP KEY --- */}
-          <Prompt command="curl https://sandrp.de/pgp" />
+          <Prompt command="curl https://sandrp.de/pgp.asc" />
 
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#0a0a0a] border border-zinc-800 p-4 rounded-sm group hover:border-[#d17780]/50 transition-colors">
             <div className="flex items-center gap-3">
@@ -93,13 +93,13 @@ export default function Home() {
                 <circle cx="9" cy="9" r="2" fill="#d17780"/>
               </svg>
               <div>
-                <span className="text-zinc-100 font-mono text-sm block">sandro_pub.asc</span>
-                <span className="text-zinc-500 text-xs uppercase tracking-widest">Fingerprint: 1234 ABCD 5678 EFGH...</span>
+                <span className="text-zinc-100 font-mono text-sm block">pgp.asc</span>
+                <span className="text-zinc-500 text-xs uppercase tracking-widest">Fingerprint: ...</span>
               </div>
             </div>
 
             <a
-                href="/pgp"
+                href="/pgp.asc"
                 download
                 className="mt-4 sm:mt-0 flex items-center gap-2 text-xs font-bold text-[#d17780] border border-[#d17780] px-3 py-1.5 hover:bg-[#d17780] hover:text-black transition-all"
             >
