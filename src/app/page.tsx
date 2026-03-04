@@ -82,12 +82,31 @@ export default function Home() {
             </a>
           </div>
 
-          {/* PGP KEY */}
+          {/* --- SECTION: PGP KEY --- */}
           <Prompt command="curl https://sandrp.de/pgp" />
-          <div className="flex justify-between items-center pl-2">
-            <span className="text-zinc-500 animate-pulse">Downloading...</span>
-            <a href="#" className="text-zinc-400 hover:text-white border-b border-transparent hover:border-white pb-0.5">
-              Download PGP ↓
+
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#0a0a0a] border border-zinc-800 p-4 rounded-sm group hover:border-[#d17780]/50 transition-colors">
+            <div className="flex items-center gap-3">
+              {/* Ein kleines Icon (Schlüssel-Symbol) */}
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d17780" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 6v6h6l-2 2-2-2v6h-2v-2h-2v2h-2v-4a7 7 0 1 1 7-10Z"/>
+                <circle cx="9" cy="9" r="2" fill="#d17780"/>
+              </svg>
+              <div>
+                <span className="text-zinc-100 font-mono text-sm block">sandro_pub.asc</span>
+                <span className="text-zinc-500 text-xs uppercase tracking-widest">Fingerprint: 1234 ABCD 5678 EFGH...</span>
+              </div>
+            </div>
+
+            <a
+                href="/pgp"
+                download
+                className="mt-4 sm:mt-0 flex items-center gap-2 text-xs font-bold text-[#d17780] border border-[#d17780] px-3 py-1.5 hover:bg-[#d17780] hover:text-black transition-all"
+            >
+              DOWNLOAD PGP
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>
+              </svg>
             </a>
           </div>
 
