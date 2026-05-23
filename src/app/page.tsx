@@ -21,6 +21,7 @@ export default function Home() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000); // Reset nach 2 Sek.
   };
+
   return (
       // Der Haupt-Container erzwingt einen dunklen Hintergrund, da Terminal-Seiten dunkel sein sollten
       <div className="min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-[#bd4954] selection:text-black">
@@ -31,7 +32,6 @@ export default function Home() {
           {/* Terminal Header (Optional, wie bei Lina oben) */}
           <div className="flex justify-between items-center border-b border-zinc-800 pb-2 mb-6 text-xs text-zinc-600">
             <span>{new Date().toLocaleTimeString('de-DE')} (Europe/Berlin) | sandrp.de</span>
-            <span className="text-red-500 bg-red-500/10 px-2 py-0.5 rounded cursor-pointer hover:bg-red-500 hover:text-white transition-colors">x</span>
           </div>
 
           {/* ASCII Art Logo */}
@@ -68,9 +68,10 @@ export default function Home() {
               <div className="flex flex-col gap-4 w-full">
                 <div>
                   <h1 className="text-xl font-bold text-white mb-1">Sandro</h1>
-                  <p className="text-zinc-400">Developer @ RWTH-Aachen | 18 years old | </p>
-                  <p className="text-zinc-400">Hobby-Developer @ SoulSMP</p>
-                  <p className="text-zinc-500 text-sm mt-1">Location: Aachen</p>
+                  <p className="text-zinc-400">18 years old | any pronouns</p>
+                  <p className="text-zinc-400">founder of <a href="https://dezentrale-erkelenz.de" target="_blank" rel="noopener noreferrer" className="underline">Dezentrale Erkelenz i.Gr.</a></p>
+                  <p className="text-zinc-400">Hobby-Developer or something like that :3</p>
+                  <p className="text-zinc-500 text-sm mt-1">Location: Erkelenz, NRW</p>
                 </div>
               </div>
             </div>
@@ -80,7 +81,7 @@ export default function Home() {
 
           {/* --- SECTION: SOCIALS --- */}
           <Prompt command="./socials.sh" />
-          <div className="flex flex-col gap-2 pl-2">
+          <div className="flex flex-col gap-2 pl-2 bg-[#0a0a0a] border border-zinc-800 p-4 rounded-sm group hover:border-[#d17780]/50 transition-colors">
             <a href="#" className="hover:text-[#d17780] transition-colors w-max">
               <span className="text-zinc-500 mr-4">[gh]</span> github.com/sandrpp
             </a>
@@ -123,15 +124,15 @@ export default function Home() {
             </a>
           </div>
 
-          <Prompt command="cat https://sandrp.de/banner.html" />
+          <Prompt command="curl https://sandrp.de/banner.html" />
 
-          <div className="border border-zinc-800 bg-[#0a0a0a] rounded-sm overflow-hidden group">
+          <div className="border border-zinc-800 bg-[#0a0a0a] rounded-sm overflow-hidden group hover:border-[#d17780]/50 transition-colors">
             <div className="p-3 border-b border-zinc-800 bg-zinc-900/50 flex justify-between items-center">
               <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400">My brand new Banner!</h3>
               <span className="text-[10px] font-mono text-zinc-600">88x31px</span>
             </div>
 
-            <div className="p-4 flex flex-col md:flex-row items-center gap-6">
+            <div className="p-4 flex flex-col md:flex-row items-center gap-4">
               <div className="shrink-0">
                 <img
                     src="/banners/sandrp.png"
@@ -142,22 +143,22 @@ export default function Home() {
                 />
               </div>
 
-              {/* Die Code-Box mit Padding-Rechts für den Button */}
-              <div className="w-full relative min-w-0">
-      <pre className="bg-black p-3 pr-24 text-[10px] text-zinc-500 border border-zinc-900 overflow-x-auto font-mono scrollbar-thin scrollbar-thumb-zinc-800">
-        {bannerCode}
-      </pre>
-                <button
-                    onClick={handleCopy}
-                    className={`absolute top-2 right-2 px-3 py-1 text-[10px] uppercase font-bold transition-all border ${
-                        copied
-                            ? 'bg-[#d17780] text-black border-[#d17780]'
-                            : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780]'
-                    }`}
-                >
-                  {copied ? 'Copied!' : 'Copy Code'}
-                </button>
+              <div className="flex-1 min-w-0">
+                <pre className="bg-black p-3 text-[10px] text-zinc-500 border border-zinc-900 overflow-x-auto font-mono scrollbar-thin scrollbar-thumb-zinc-800">
+                  {bannerCode}
+                </pre>
               </div>
+
+              <button
+                  onClick={handleCopy}
+                  className={`shrink-0 px-3 py-1 text-[10px] uppercase font-bold transition-all border h-fit ${
+                      copied
+                          ? 'bg-[#d17780] text-black border-[#d17780]'
+                          : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780]'
+                  }`}
+              >
+                {copied ? 'Copied!' : 'Copy Code'}
+              </button>
             </div>
           </div>
 
