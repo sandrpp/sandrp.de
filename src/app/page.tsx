@@ -240,6 +240,45 @@ export default function Home() {
               />
             </a>
             <a
+                href="https://kinderschutzbund-erkelenz.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <Image
+                  src="/banners/dksb.png"
+                  alt="Deutscher Kinderschutzbund Logo"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
+            <a
+                href="https://jugendhackt.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <Image
+                  src="/banners/jugendhackt.png"
+                  alt="Jugendhackt Logo"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
+            <a
+                href="https://dezentrale-erkelenz.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <Image
+                  src="/banners/dezentrale.png"
+                  alt="Dezentrale Erkelenz Logo"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
+            <a
                 href="https://lina.sh/"
                 target="_blank"
                 rel="noopener noreferrer"
