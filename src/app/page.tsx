@@ -291,20 +291,32 @@ export default function Home() {
                   style={{imageRendering: 'pixelated'}}
               />
             </a>
-            <Image
-                src="/badges/trans_rights.png"
-                alt="Trans Rights Banner"
-                width={88}
-                height={31}
-                style={{imageRendering: 'pixelated'}}
-            />
-            <Image
-                src="/badges/powered-by-debian.gif"
-                alt="Powered By Debian Banner"
-                width={88}
-                height={31}
-                style={{imageRendering: 'pixelated'}}
-            />
+            <a
+                href="https://trans.fish/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <Image
+                  src="/badges/trans_rights.png"
+                  alt="Trans Rights Banner"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
+            <a
+                href="https://www.debian.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <Image
+                  src="/badges/powered-by-debian.gif"
+                  alt="Powered By Debian Banner"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
             <a
                 href="https://trans.fish/"
                 target="_blank"
