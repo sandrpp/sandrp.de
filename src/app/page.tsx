@@ -6,7 +6,7 @@ import Oneko from "@/components/Oneko";
 // Kleine Hilfskomponente für die Kommandozeilen-Eingabe
 const Prompt = ({ command }: { command: string }) => (
     <div className="mt-8 mb-4">
-      <span className="text-[#d17780] font-bold">root@sandrp.de</span>
+      <span className="text-[#FFE55C] font-bold">root@sandrp.de</span>
       <span className="text-zinc-500"> :~$ </span>
       <span className="text-zinc-100 font-semibold">{command}</span>
     </div>
@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
       // Der Haupt-Container erzwingt einen dunklen Hintergrund, da Terminal-Seiten dunkel sein sollten
-      <div className="min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-[#bd4954] selection:text-black">
+      <div className="min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-yellow-400/70 selection:text-black">
         <Oneko />
         {/* Das "Terminal-Fenster" */}
         <main className="w-full max-w-4xl flex flex-col ">
@@ -47,7 +47,7 @@ export default function Home() {
               </div>
               <button
                 onClick={handleReopenTerminal}
-                className="px-3 py-1.5 bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780] border transition-all cursor-pointer"
+                className="px-3 py-1.5 bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#FFE55C] hover:text-[#FFE55C] border transition-all cursor-pointer"
               >
                 im sorry :(
               </button>
@@ -58,27 +58,27 @@ export default function Home() {
                 <span>{new Date().toLocaleTimeString('de-DE')} (Europe/Berlin) | sandrp.de</span>
                 <button
                   onClick={handleCloseTerminal}
-                  className="px-2 py-0.5 text-red-500 bg-red-500/10 border border-red-500/5 hover:border-red-500 transition-colors rounded cursor-pointer"
+                  className="px-2 py-0.5 text-yellow-400 bg-yellow-400/10 border border-yellow-400/5 hover:border-yellow-400 transition-colors cursor-pointer"
                 >
                   x
                 </button>
               </div>
 
-              <pre className="hidden lg:block text-[#873750] font-bold text-xs sm:text-sm md:text-base lg:text-base leading-tight mb-8 overflow-x-auto text-left">
-                {`                                     _                    _      
-                 ___  __ _ _ __   __| |_ __ _ __       __| | ___ 
-                / __|/ _\` | '_ \\ / _\` | '__| '_ \\     / _\` |/ _ \\
-                \\__ \\ (_| | | | | (_| | |  | |_) | _ | (_| |  __/
-                |___/\\__,_|_| |_|\\__,_|_|  | .__/ (_) \\__,_|\\___|
-                                           |_|               `}
+              <pre className="hidden lg:block font-bold text-xs sm:text-sm md:text-base lg:text-base leading-tight mb-8 overflow-x-auto text-left">
+                <span className="text-[#FCF434]">{`                        _                    _      \n`}</span>
+                <span className="text-[#FCF434]">{`   ___  __ _ _ __    __| |_ __ _ __       __| | ___ \n`}</span>
+                <span className="text-[#FFFFFF]">{`  / __|/ _\` | '_ \\ / _ | | '__| '_ \\     / _\` |/ _ \\\n`}</span>
+                <span className="text-[#9C59D1]">{`  \\__ \\ (_| | | | | (_|| | |  | |_) | _ | (_| |  __/\n`}</span>
+                <span className="text-[#2C2C2C]">{`  |___/\\__,_|_| |_|\\___|_|_|  | .__/ (_) \\__,_|\\___|\n`}</span>
+                <span className="text-[#2C2C2C]">{`                              |_|               `}</span>
               </pre>
 
               <Prompt command="glow about_me.md" />
-              <div className="border border-zinc-800 p-4 sm:p-6 relative rounded-sm bg-[#0a0a0a] hover:border-[#d17780]/50 transition-colors">
+              <div className="border border-zinc-800 p-4 sm:p-6 relative bg-[#0a0a0a] hover:border-[#FFE55C]/50 transition-colors">
 
                 <div className="flex flex-col sm:flex-row gap-6 items-start">
                   {/* Profilbild Bereich */}
-                  <div className="w-32 h-32 border border-[#bd4954] p-1 shrink-0 relative">
+                  <div className="w-32 h-32 border border-[#D6B53C] p-1 shrink-0 relative">
                     <Image
                         src="/avatar.png" // Der Name deiner Datei im public-Ordner
                         alt="Sandro Avatar"
@@ -110,32 +110,50 @@ export default function Home() {
                       <p className="text-zinc-500 text-sm mt-1">Location: Erkelenz, NRW</p>
                     </div>
                   </div>
+                  
+                  <Image
+                      className="hidden md:block absolute -top-12 right-5 text-white pointer-events-none stroke-current rotate-10"
+                      src={"/pins/nonbinary_flag.png"}
+                      alt={"Nonbinary Flag"}
+                      width={120}
+                      height={120}
+                      style={{imageRendering: 'pixelated'}}
+                  />
+                  <Image
+                      className="md:hidden absolute -top-5 -right-5 text-white pointer-events-none stroke-current rotate-10"
+                      src={"/pins/nonbinary_flag.png"}
+                      alt={"Nonbinary Flag"}
+                      width={64}
+                      height={64}
+                      style={{imageRendering: 'pixelated'}}
+                  />
+                  
                 </div>
               </div>
 
               <Prompt command="./socials.sh" />
-              <div className="flex flex-col gap-2 pl-2 bg-[#0a0a0a] border border-zinc-800 p-4 rounded-sm group hover:border-[#d17780]/50 transition-colors">
-                <a href="https://github.com/sandrpp" className="hover:text-[#d17780] transition-colors w-max">
+              <div className="flex flex-col gap-2 pl-2 bg-[#0a0a0a] border border-zinc-800 p-4 group hover:border-[#FFE55C]/50 transition-colors">
+                <a href="https://github.com/sandrpp" className="hover:text-[#FFE55C] transition-colors w-max">
                   <span className="text-zinc-500 mr-4">[gh]</span> github.com/sandrpp
                 </a>
-                <a href="#" className="hover:text-[#d17780] transition-colors w-max">
+                <a href="#" className="hover:text-[#FFE55C] transition-colors w-max">
                   <span className="text-zinc-500 mr-4">[dc]</span> @sandrp
                 </a>
-                <a href="mailto:me@sandrp.de" className="hover:text-[#d17780] transition-colors w-max">
+                <a href="mailto:me@sandrp.de" className="hover:text-[#FFE55C] transition-colors w-max">
                   <span className="text-zinc-500 mr-4">[mail]</span> me@sandrp.de
                 </a>
-                <a href="https://matrix.to/#/@me:sandrp.de" className="hover:text-[#d17780] transition-colors w-max">
+                <a href="https://matrix.to/#/@me:sandrp.de" className="hover:text-[#FFE55C] transition-colors w-max">
                   <span className="text-zinc-500 mr-4">[matrix]</span> @me:sandrp.de
                 </a>
               </div>
 
               <Prompt command="curl https://sandrp.de/pgp.asc" />
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#0a0a0a] border border-zinc-800 p-4 rounded-sm group hover:border-[#d17780]/50 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#0a0a0a] border border-zinc-800 p-4 group hover:border-[#FFE55C]/50 transition-colors">
                 <div className="flex items-center gap-3">
                   {/* Ein kleines Icon (Schlüssel-Symbol) */}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d17780" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFE55C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M15 6v6h6l-2 2-2-2v6h-2v-2h-2v2h-2v-4a7 7 0 1 1 7-10Z"/>
-                    <circle cx="9" cy="9" r="2" fill="#d17780"/>
+                    <circle cx="9" cy="9" r="2" fill="#FFE55C"/>
                   </svg>
                   <div>
                     <span className="text-zinc-100 font-mono text-sm block">pgp.asc</span>
@@ -145,7 +163,7 @@ export default function Home() {
                 <a
                     href="/pgp.asc"
                     download
-                    className="mt-4 sm:mt-0 flex items-center gap-2 text-xs font-bold bg-zinc-900 text-zinc-400 border border-zinc-800 px-3 py-1.5 hover:border-[#d17780] hover:text-[#d17780] transition-all"
+                    className="mt-4 sm:mt-0 flex items-center gap-2 text-xs font-bold bg-zinc-900 text-zinc-400 border border-zinc-800 px-3 py-1.5 hover:border-[#FFE55C] hover:text-[#FFE55C] transition-all"
                 >
                   DOWNLOAD PGP
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -155,7 +173,7 @@ export default function Home() {
               </div>
 
               <Prompt command="curl https://sandrp.de/banner.html" />
-              <div className="border border-zinc-800 bg-[#0a0a0a] rounded-sm overflow-hidden group hover:border-[#d17780]/50 transition-colors">
+              <div className="border border-zinc-800 bg-[#0a0a0a] overflow-hidden group hover:border-[#FFE55C]/50 transition-colors">
                 <div className="p-3 border-b border-zinc-800 bg-zinc-900/50 flex justify-between items-center">
                   <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400">My brand new Banner!</h3>
                   <span className="text-[10px] font-mono text-zinc-600">88x31px</span>
@@ -177,8 +195,8 @@ export default function Home() {
                         onClick={handleCopy}
                         className={`shrink-0 px-3 py-1.5 text-[10px] uppercase font-bold transition-all border h-fit whitespace-nowrap ${
                             copied
-                                ? 'bg-[#d17780] text-black border-[#d17780]'
-                                : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780] cursor-pointer'
+                                ? 'bg-[#FFE55C] text-black border-[#FFE55C]'
+                                : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#FFE55C] hover:text-[#FFE55C] cursor-pointer'
                         }`}
                     >
                       {copied ? 'Copied!' : 'Copy Code'}
@@ -211,8 +229,8 @@ export default function Home() {
                       onClick={handleCopy}
                       className={`shrink-0 px-3 py-1 text-[10px] uppercase font-bold transition-all border h-fit ${
                           copied
-                              ? 'bg-[#d17780] text-black border-[#d17780]'
-                              : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780] cursor-pointer'
+                              ? 'bg-[#FFE55C] text-black border-[#FFE55C]'
+                              : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#FFE55C] hover:text-[#FFE55C] cursor-pointer'
                       }`}
                   >
                     {copied ? 'Copied!' : 'Copy Code'}
