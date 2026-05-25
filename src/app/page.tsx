@@ -90,7 +90,7 @@ export default function Home() {
             {/* --- SECTION: SOCIALS --- */}
             <Prompt command="./socials.sh" />
             <div className="flex flex-col gap-2 pl-2 bg-[#0a0a0a] border border-zinc-800 p-4 rounded-sm group hover:border-[#d17780]/50 transition-colors">
-              <a href="#" className="hover:text-[#d17780] transition-colors w-max">
+              <a href="https://github.com/sandrpp" className="hover:text-[#d17780] transition-colors w-max">
                 <span className="text-zinc-500 mr-4">[gh]</span> github.com/sandrpp
               </a>
               <a href="#" className="hover:text-[#d17780] transition-colors w-max">
@@ -99,7 +99,7 @@ export default function Home() {
               <a href="mailto:me@sandrp.de" className="hover:text-[#d17780] transition-colors w-max">
                 <span className="text-zinc-500 mr-4">[mail]</span> me@sandrp.de
               </a>
-              <a href="#" className="hover:text-[#d17780] transition-colors w-max">
+              <a href="https://matrix.to/#/@me:sandrp.de" className="hover:text-[#d17780] transition-colors w-max">
                 <span className="text-zinc-500 mr-4">[matrix]</span> @me:sandrp.de
               </a>
             </div>
