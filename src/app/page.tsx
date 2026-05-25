@@ -14,6 +14,7 @@ const Prompt = ({ command }: { command: string }) => (
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
+  const [terminalClosed, setTerminalClosed] = useState(false);
   const bannerCode = `<a href="https://sandrp.de/" target="_blank"><img src="https://sandrp.de/banners/sandrp.png" alt="sandrp.de" width="88" height="31"></a>`;
 
   const handleCopy = () => {
@@ -22,27 +23,56 @@ export default function Home() {
     setTimeout(() => setCopied(false), 2000); // Reset nach 2 Sek.
   };
 
+  const handleCloseTerminal = () => {
+    setTerminalClosed(true);
+  };
+
+  const handleReopenTerminal = () => {
+    setTerminalClosed(false);
+  };
+
   return (
       // Der Haupt-Container erzwingt einen dunklen Hintergrund, da Terminal-Seiten dunkel sein sollten
       <div className="min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-[#bd4954] selection:text-black">
         <Oneko />
         {/* Das "Terminal-Fenster" */}
         <main className="w-full max-w-4xl flex flex-col ">
-          <div className="flex flex-col bg-[#060606] border border-zinc-800 p-6">
+          {terminalClosed ? (
+            <div className="flex flex-col items-center justify-center gap-6 p-12 text-center min-h-96">
+              <div>
+                <h2 className="text-2xl font-bold text-white mb-4">What?!</h2>
+                <p className="text-zinc-300 mb-6 max-w-md">
+                  Why the hack did you do this?? You monster! The terminal is now closed and you can't see all the cool stuff I put there for you!
+                </p>
+              </div>
+              <button
+                onClick={handleReopenTerminal}
+                className="px-6 py-2 text-[#d17780] border border-[#d17780] px-3 py-1.5 hover:bg-[#d17780] hover:text-black transition-all cursor-pointer"
+              >
+                im sorry :(
+              </button>
+            </div>
+          ) : (
+            <div className="flex flex-col bg-[#060606] border border-zinc-800 p-6">
             {/* Terminal Header (Optional, wie bei Lina oben) */}
             <div className="flex justify-between items-center border-b border-zinc-800 pb-2 mb-6 text-xs text-zinc-600">
               <span>{new Date().toLocaleTimeString('de-DE')} (Europe/Berlin) | sandrp.de</span>
+              <button
+                onClick={handleCloseTerminal}
+                className="text-red-500 bg-red-500/10 px-2 py-0.5 rounded cursor-pointer hover:bg-red-500 hover:text-white transition-colors border-none"
+              >
+                x
+              </button>
             </div>
 
-            {/* ASCII Art Logo */}
             <pre className="text-[#873750] font-bold text-xs sm:text-sm md:text-base leading-tight mb-8 overflow-x-auto">
-  {`                       _                    _      
-   ___  __ _ _ __   __| |_ __ _ __       __| | ___ 
-  / __|/ _\` | '_ \\ / _\` | '__| '_ \\     / _\` |/ _ \\
-  \\__ \\ (_| | | | | (_| | |  | |_) | _ | (_| |  __/
-  |___/\\__,_|_| |_|\\__,_|_|  | .__/ (_) \\__,_|\\___|
-                             |_|               `}
-          </pre>
+              {`                                   _                    _      
+               ___  __ _ _ __   __| |_ __ _ __       __| | ___ 
+              / __|/ _\` | '_ \\ / _\` | '__| '_ \\     / _\` |/ _ \\
+              \\__ \\ (_| | | | | (_| | |  | |_) | _ | (_| |  __/
+              |___/\\__,_|_| |_|\\__,_|_|  | .__/ (_) \\__,_|\\___|
+                                         |_|               `}
+            </pre>
 
             {/* --- SECTION: ABOUT ME --- */}
             <Prompt command="glow about_me.md" />
@@ -142,7 +172,7 @@ export default function Home() {
 
               <div className="p-4 flex flex-col md:flex-row items-center gap-4">
                 <div className="shrink-0">
-                  <img
+                  <Image
                       src="/banners/sandrp.png"
                       alt="sandrp.de banner"
                       width={88}
@@ -162,14 +192,15 @@ export default function Home() {
                     className={`shrink-0 px-3 py-1 text-[10px] uppercase font-bold transition-all border h-fit ${
                         copied
                             ? 'bg-[#d17780] text-black border-[#d17780]'
-                            : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780]'
+                            : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780] cursor-pointer'
                     }`}
                 >
                   {copied ? 'Copied!' : 'Copy Code'}
                 </button>
               </div>
             </div>
-          </div>
+            </div>
+          )}
 
           <div className="mt-24 mb-12 flex flex-wrap gap-2 justify-center">
             <a
