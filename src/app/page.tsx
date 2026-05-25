@@ -64,7 +64,7 @@ export default function Home() {
                 </button>
               </div>
 
-              <pre className="hidden sm:flex text-[#873750] font-bold text-xs sm:text-sm md:text-base leading-tight mb-8 overflow-x-auto">
+              <pre className="hidden lg:block text-[#873750] font-bold text-xs sm:text-sm md:text-base lg:text-base leading-tight mb-8 overflow-x-auto text-left">
                 {`                                     _                    _      
                  ___  __ _ _ __   __| |_ __ _ __       __| | ___ 
                 / __|/ _\` | '_ \\ / _\` | '__| '_ \\     / _\` |/ _ \\
