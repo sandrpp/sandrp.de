@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Image from "next/image";
 import Oneko from "@/components/Oneko";
+import JitterText from "@/components/JitterText";
+import WavyText from "@/components/WavyText";
 
 // Kleine Hilfskomponente für die Kommandozeilen-Eingabe
 const Prompt = ({ command }: { command: string }) => (
@@ -57,7 +59,7 @@ export default function Home() {
                  onClick={handleReopenTerminal}
                  className="px-3 py-1.5 bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#bd4954] hover:text-[#bd4954] border transition-all cursor-pointer"
                >
-                im sorry :(
+                 <JitterText text="im sorry :(" />
               </button>
             </div>
           ) : (
@@ -114,7 +116,7 @@ export default function Home() {
                           />
                         </svg>
                       </p>
-                      <p className="text-zinc-400">Hobby-Developer or something like that :3</p>
+                      <p className="text-zinc-400"><WavyText text="Developer" /> or something like that :3</p>
                       <p className="text-zinc-500 text-sm mt-1">Location: Erkelenz, NRW</p>
                     </div>
                   </div>
@@ -181,10 +183,10 @@ export default function Home() {
                 </a>
               </div>
 
-              <Prompt command="curl https://sandrp.de/banner.html" />
-               <div className="border border-zinc-800 bg-[#0a0a0a] overflow-hidden group hover:border-[#bd4954]/50 transition-colors">
+              <Prompt command="curl https://sandrp.de/badge.html" />
+               <div className="border border-zinc-800 bg-[#0a0a0a] group hover:border-[#bd4954]/50 transition-colors">
                 <div className="p-3 border-b border-zinc-800 bg-zinc-900/50 flex justify-between items-center">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400">My brand new Banner!</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400">My own little <WavyText text="Web Badge" /> ^^</h3>
                   <span className="text-[10px] font-mono text-zinc-600">88x31px</span>
                 </div>
 
@@ -192,8 +194,8 @@ export default function Home() {
                   <div className="flex items-center gap-3 mb-4">
                     <div className="shrink-0">
                       <Image
-                          src="/banners/sandrp.png"
-                          alt="sandrp.de banner"
+                          src="/badges/sandrp.png"
+                          alt="sandrp.de Banner"
                           width={88}
                           height={31}
                           style={{ imageRendering: 'pixelated' }}
@@ -220,8 +222,8 @@ export default function Home() {
                 <div className="hidden sm:flex p-4 items-center gap-4">
                   <div className="shrink-0">
                     <Image
-                        src="/banners/sandrp.png"
-                        alt="sandrp.de banner"
+                        src="/badges/sandrp.png"
+                        alt="sandrp.de Banner"
                         width={88}
                         height={31}
                         style={{ imageRendering: 'pixelated' }}
@@ -256,7 +258,7 @@ export default function Home() {
                 rel="noopener noreferrer"
             >
               <Image
-                  src="/banners/sandrp.png"
+                  src="/badges/sandrp.png"
                   alt="Sandrp Banner"
                   width={88}
                   height={31}
@@ -282,7 +284,7 @@ export default function Home() {
                 rel="noopener noreferrer"
             >
               <Image
-                  src="/banners/free_tech_tips.png"
+                  src="/badges/free_tech_tips.png"
                   alt="Free Tech Tips Banner"
                   width={88}
                   height={31}
@@ -290,14 +292,14 @@ export default function Home() {
               />
             </a>
             <Image
-                src="/banners/trans_rights.png"
+                src="/badges/trans_rights.png"
                 alt="Trans Rights Banner"
                 width={88}
                 height={31}
                 style={{imageRendering: 'pixelated'}}
             />
             <Image
-                src="/banners/powered-by-debian.gif"
+                src="/badges/powered-by-debian.gif"
                 alt="Powered By Debian Banner"
                 width={88}
                 height={31}
@@ -309,7 +311,7 @@ export default function Home() {
                 rel="noopener noreferrer"
             >
               <Image
-                  src="/banners/flag-progress.png"
+                  src="/badges/flag-progress.png"
                   alt="trans.fish"
                   width={88}
                   height={31}
@@ -322,7 +324,7 @@ export default function Home() {
                 rel="noopener noreferrer"
             >
               <Image
-                  src="/banners/ublock-origin.png"
+                  src="/badges/ublock-origin.png"
                   alt="ublock origin Banner"
                   width={88}
                   height={31}
@@ -335,7 +337,7 @@ export default function Home() {
                 rel="noopener noreferrer"
             >
               <Image
-                  src="/banners/dksb.png"
+                  src="/badges/dksb.png"
                   alt="Deutscher Kinderschutzbund Logo"
                   width={88}
                   height={31}
@@ -348,7 +350,7 @@ export default function Home() {
                 rel="noopener noreferrer"
             >
               <Image
-                  src="/banners/jugendhackt.png"
+                  src="/badges/jugendhackt.png"
                   alt="Jugendhackt Logo"
                   width={88}
                   height={31}
@@ -361,7 +363,7 @@ export default function Home() {
                 rel="noopener noreferrer"
             >
               <Image
-                  src="/banners/dezentrale.png"
+                  src="/badges/dezentrale.png"
                   alt="Dezentrale Erkelenz Logo"
                   width={88}
                   height={31}
@@ -374,7 +376,7 @@ export default function Home() {
                 rel="noopener noreferrer"
             >
               <Image
-                  src="/banners/lina.gif"
+                  src="/badges/lina.gif"
                   alt={"Lina.sh Gif"}
                   width={88}
                   height={31}
@@ -387,7 +389,7 @@ export default function Home() {
                 rel="noopener noreferrer"
             >
               <Image
-                  src="/banners/codeberg.png"
+                  src="/badges/codeberg.png"
                   alt="Codeberg Logo"
                   width={88}
                   height={31}
@@ -395,7 +397,7 @@ export default function Home() {
               />
             </a>
             <Image
-                src="/banners/tom-scott.png"
+                src="/badges/tom-scott.png"
                 alt="Tom Scott in a Web Badge"
                 width={88}
                 height={31}
@@ -418,7 +420,7 @@ export default function Home() {
                 target="_blank"
             >
               <Image
-                  src="/banners/freifunk.png"
+                  src="/badges/freifunk.png"
                   alt="Freifunk Banner"
                   width={88}
                   height={31}
