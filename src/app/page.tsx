@@ -27,142 +27,150 @@ export default function Home() {
       <div className="min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-[#bd4954] selection:text-black">
         <Oneko />
         {/* Das "Terminal-Fenster" */}
-        <main className="w-full max-w-4xl flex flex-col">
+        <main className="w-full max-w-4xl flex flex-col ">
+          <div className="flex flex-col bg-[#060606] border border-zinc-800 p-6">
+            {/* Terminal Header (Optional, wie bei Lina oben) */}
+            <div className="flex justify-between items-center border-b border-zinc-800 pb-2 mb-6 text-xs text-zinc-600">
+              <span>{new Date().toLocaleTimeString('de-DE')} (Europe/Berlin) | sandrp.de</span>
+            </div>
 
-          {/* Terminal Header (Optional, wie bei Lina oben) */}
-          <div className="flex justify-between items-center border-b border-zinc-800 pb-2 mb-6 text-xs text-zinc-600">
-            <span>{new Date().toLocaleTimeString('de-DE')} (Europe/Berlin) | sandrp.de</span>
-          </div>
+            {/* ASCII Art Logo */}
+            <pre className="text-[#873750] font-bold text-xs sm:text-sm md:text-base leading-tight mb-8 overflow-x-auto">
+  {`                       _                    _      
+   ___  __ _ _ __   __| |_ __ _ __       __| | ___ 
+  / __|/ _\` | '_ \\ / _\` | '__| '_ \\     / _\` |/ _ \\
+  \\__ \\ (_| | | | | (_| | |  | |_) | _ | (_| |  __/
+  |___/\\__,_|_| |_|\\__,_|_|  | .__/ (_) \\__,_|\\___|
+                             |_|               `}
+          </pre>
 
-          {/* ASCII Art Logo */}
-          <pre className="text-[#873750] font-bold text-xs sm:text-sm md:text-base leading-tight mb-8 overflow-x-auto">
-{`                     _                    _      
- ___  __ _ _ __   __| |_ __ _ __       __| | ___ 
-/ __|/ _\` | '_ \\ / _\` | '__| '_ \\     / _\` |/ _ \\
-\\__ \\ (_| | | | | (_| | |  | |_) | _ | (_| |  __/
-|___/\\__,_|_| |_|\\__,_|_|  | .__/ (_) \\__,_|\\___|
-                           |_|               `}
-        </pre>
+            {/* --- SECTION: ABOUT ME --- */}
+            <Prompt command="glow about_me.md" />
+            <div className="border border-zinc-800 p-4 sm:p-6 relative rounded-sm bg-[#0a0a0a] hover:border-[#d17780]/50 transition-colors">
 
-          {/* --- SECTION: ABOUT ME --- */}
-          <Prompt command="glow about_me.md" />
-          <div className="border border-zinc-800 p-4 sm:p-6 relative rounded-sm bg-[#0a0a0a]">
-            {/* Label auf dem Rahmen */}
-            <span className="absolute -top-3 left-4 bg-[#050505] px-2 text-zinc-500 text-sm">
-            about_me.md
-          </span>
+              <div className="flex flex-col sm:flex-row gap-6 items-start">
+                {/* Profilbild Bereich */}
+                <div className="w-32 h-32 border border-[#bd4954] p-1 shrink-0 relative">
+                  <Image
+                      src="/avatar.png" // Der Name deiner Datei im public-Ordner
+                      alt="Sandro Avatar"
+                      width={128}
+                      height={128}
+                      className="object-cover w-full h-full"
+                      priority
+                  />
+                </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 items-start">
-              {/* Profilbild Bereich */}
-              <div className="w-32 h-32 border border-[#bd4954] p-1 shrink-0 relative">
-                <Image
-                    src="/avatar.png" // Der Name deiner Datei im public-Ordner
-                    alt="Sandro Avatar"
-                    width={128}
-                    height={128}
-                    className="object-cover w-full h-full"
-                    priority
-                />
-              </div>
-
-              <div className="flex flex-col gap-4 w-full">
-                <div>
-                  <h1 className="text-xl font-bold text-white mb-1">Sandro</h1>
-                  <p className="text-zinc-400">18 years old | any pronouns</p>
-                  <p className="text-zinc-400">founder of <a href="https://dezentrale-erkelenz.de" target="_blank" rel="noopener noreferrer" className="underline">Dezentrale Erkelenz i.Gr.</a></p>
-                  <p className="text-zinc-400">Hobby-Developer or something like that :3</p>
-                  <p className="text-zinc-500 text-sm mt-1">Location: Erkelenz, NRW</p>
+                <div className="flex flex-col gap-4 w-full">
+                  <div>
+                    <h1 className="text-xl font-bold text-white mb-1">Sandro</h1>
+                    <p className="text-zinc-400">18 years old | any pronouns</p>
+                    <p className="text-zinc-400">founder of <a href="https://dezentrale-erkelenz.de" target="_blank" rel="noopener noreferrer" className="underline">Dezentrale Erkelenz i.Gr.</a></p>
+                    <p className="text-zinc-400">you can find me there
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" className="inline-block ml-1" style={{transform: 'translateY(-5px)'}}>
+                        <path
+                          d="M 20,80 L 80,80 L 80,45 M 70,55 L 80,45 L 90,55"
+                          fill="none"
+                          stroke="#9CA3AF"
+                          strokeWidth="8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </p>
+                    <p className="text-zinc-400">Hobby-Developer or something like that :3</p>
+                    <p className="text-zinc-500 text-sm mt-1">Location: Erkelenz, NRW</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
 
 
-          {/* --- SECTION: SOCIALS --- */}
-          <Prompt command="./socials.sh" />
-          <div className="flex flex-col gap-2 pl-2 bg-[#0a0a0a] border border-zinc-800 p-4 rounded-sm group hover:border-[#d17780]/50 transition-colors">
-            <a href="#" className="hover:text-[#d17780] transition-colors w-max">
-              <span className="text-zinc-500 mr-4">[gh]</span> github.com/sandrpp
-            </a>
-            <a href="#" className="hover:text-[#d17780] transition-colors w-max">
-              <span className="text-zinc-500 mr-4">[dc]</span> @sandrp
-            </a>
-            <a href="mailto:me@sandrp.de" className="hover:text-[#d17780] transition-colors w-max">
-              <span className="text-zinc-500 mr-4">[mail]</span> me@sandrp.de
-            </a>
-            <a href="#" className="hover:text-[#d17780] transition-colors w-max">
-              <span className="text-zinc-500 mr-4">[matrix]</span> @me:sandrp.de
-            </a>
-          </div>
-
-          {/* --- SECTION: PGP KEY --- */}
-          <Prompt command="curl https://sandrp.de/pgp.asc" />
-
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#0a0a0a] border border-zinc-800 p-4 rounded-sm group hover:border-[#d17780]/50 transition-colors">
-            <div className="flex items-center gap-3">
-              {/* Ein kleines Icon (Schlüssel-Symbol) */}
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d17780" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 6v6h6l-2 2-2-2v6h-2v-2h-2v2h-2v-4a7 7 0 1 1 7-10Z"/>
-                <circle cx="9" cy="9" r="2" fill="#d17780"/>
-              </svg>
-              <div>
-                <span className="text-zinc-100 font-mono text-sm block">pgp.asc</span>
-                <span className="text-zinc-500 text-xs uppercase tracking-widest">Fingerprint: B55E E28C 143A C940 1CB2  65C0 A318 3B7B 8081 B136</span>
-              </div>
+            {/* --- SECTION: SOCIALS --- */}
+            <Prompt command="./socials.sh" />
+            <div className="flex flex-col gap-2 pl-2 bg-[#0a0a0a] border border-zinc-800 p-4 rounded-sm group hover:border-[#d17780]/50 transition-colors">
+              <a href="#" className="hover:text-[#d17780] transition-colors w-max">
+                <span className="text-zinc-500 mr-4">[gh]</span> github.com/sandrpp
+              </a>
+              <a href="#" className="hover:text-[#d17780] transition-colors w-max">
+                <span className="text-zinc-500 mr-4">[dc]</span> @sandrp
+              </a>
+              <a href="mailto:me@sandrp.de" className="hover:text-[#d17780] transition-colors w-max">
+                <span className="text-zinc-500 mr-4">[mail]</span> me@sandrp.de
+              </a>
+              <a href="#" className="hover:text-[#d17780] transition-colors w-max">
+                <span className="text-zinc-500 mr-4">[matrix]</span> @me:sandrp.de
+              </a>
             </div>
 
-            <a
-                href="/pgp.asc"
-                download
-                className="mt-4 sm:mt-0 flex items-center gap-2 text-xs font-bold text-[#d17780] border border-[#d17780] px-3 py-1.5 hover:bg-[#d17780] hover:text-black transition-all"
-            >
-              DOWNLOAD PGP
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>
-              </svg>
-            </a>
-          </div>
+            {/* --- SECTION: PGP KEY --- */}
+            <Prompt command="curl https://sandrp.de/pgp.asc" />
 
-          <Prompt command="curl https://sandrp.de/banner.html" />
-
-          <div className="border border-zinc-800 bg-[#0a0a0a] rounded-sm overflow-hidden group hover:border-[#d17780]/50 transition-colors">
-            <div className="p-3 border-b border-zinc-800 bg-zinc-900/50 flex justify-between items-center">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400">My brand new Banner!</h3>
-              <span className="text-[10px] font-mono text-zinc-600">88x31px</span>
-            </div>
-
-            <div className="p-4 flex flex-col md:flex-row items-center gap-4">
-              <div className="shrink-0">
-                <img
-                    src="/banners/sandrp.png"
-                    alt="sandrp.de banner"
-                    width={88}
-                    height={31}
-                    style={{ imageRendering: 'pixelated' }}
-                />
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#0a0a0a] border border-zinc-800 p-4 rounded-sm group hover:border-[#d17780]/50 transition-colors">
+              <div className="flex items-center gap-3">
+                {/* Ein kleines Icon (Schlüssel-Symbol) */}
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d17780" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 6v6h6l-2 2-2-2v6h-2v-2h-2v2h-2v-4a7 7 0 1 1 7-10Z"/>
+                  <circle cx="9" cy="9" r="2" fill="#d17780"/>
+                </svg>
+                <div>
+                  <span className="text-zinc-100 font-mono text-sm block">pgp.asc</span>
+                  <span className="text-zinc-500 text-xs uppercase tracking-widest">Fingerprint: B55E E28C 143A C940 1CB2  65C0 A318 3B7B 8081 B136</span>
+                </div>
               </div>
 
-              <div className="flex-1 min-w-0">
-                <pre className="bg-black p-3 text-[10px] text-zinc-500 border border-zinc-900 overflow-x-auto font-mono scrollbar-thin scrollbar-thumb-zinc-800">
-                  {bannerCode}
-                </pre>
-              </div>
-
-              <button
-                  onClick={handleCopy}
-                  className={`shrink-0 px-3 py-1 text-[10px] uppercase font-bold transition-all border h-fit ${
-                      copied
-                          ? 'bg-[#d17780] text-black border-[#d17780]'
-                          : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780]'
-                  }`}
+              <a
+                  href="/pgp.asc"
+                  download
+                  className="mt-4 sm:mt-0 flex items-center gap-2 text-xs font-bold text-[#d17780] border border-[#d17780] px-3 py-1.5 hover:bg-[#d17780] hover:text-black transition-all"
               >
-                {copied ? 'Copied!' : 'Copy Code'}
-              </button>
+                DOWNLOAD PGP
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>
+                </svg>
+              </a>
+            </div>
+
+            <Prompt command="curl https://sandrp.de/banner.html" />
+
+            <div className="border border-zinc-800 bg-[#0a0a0a] rounded-sm overflow-hidden group hover:border-[#d17780]/50 transition-colors">
+              <div className="p-3 border-b border-zinc-800 bg-zinc-900/50 flex justify-between items-center">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400">My brand new Banner!</h3>
+                <span className="text-[10px] font-mono text-zinc-600">88x31px</span>
+              </div>
+
+              <div className="p-4 flex flex-col md:flex-row items-center gap-4">
+                <div className="shrink-0">
+                  <img
+                      src="/banners/sandrp.png"
+                      alt="sandrp.de banner"
+                      width={88}
+                      height={31}
+                      style={{ imageRendering: 'pixelated' }}
+                  />
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <pre className="bg-black p-3 text-[10px] text-zinc-500 border border-zinc-900 overflow-x-auto font-mono scrollbar-thin scrollbar-thumb-zinc-800">
+                    {bannerCode}
+                  </pre>
+                </div>
+
+                <button
+                    onClick={handleCopy}
+                    className={`shrink-0 px-3 py-1 text-[10px] uppercase font-bold transition-all border h-fit ${
+                        copied
+                            ? 'bg-[#d17780] text-black border-[#d17780]'
+                            : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780]'
+                    }`}
+                >
+                  {copied ? 'Copied!' : 'Copy Code'}
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* Platzhalter für die vielen kleinen "Webring" Buttons unten */}
           <div className="mt-24 mb-12 flex flex-wrap gap-2 justify-center">
             <a
                 href="https://sandrp.de/"
@@ -291,7 +299,6 @@ export default function Home() {
               />
             </a>
           </div>
-
         </main>
       </div>
   );
