@@ -318,6 +318,19 @@ export default function Home() {
               />
             </a>
             <a
+                href="https://minecraft.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <Image
+                  src="/badges/minecraft.png"
+                  alt="Minecraft Banner"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
+            <a
                 href="https://trans.fish/"
                 target="_blank"
                 rel="noopener noreferrer"
