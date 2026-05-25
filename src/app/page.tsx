@@ -177,9 +177,9 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              <img
+              <Image
                   src="/banners/sandrp.png"
-                  alt="sandrp.de"
+                  alt="Sandrp Banner"
                   width={88}
                   height={31}
                   style={{imageRendering: 'pixelated'}}
@@ -190,9 +190,9 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              <img
+              <Image
                   src="https://enjarai.dev/assets/my-button.png"
-                  alt="enjarai.dev"
+                  alt="Enjarai Banner"
                   width={88}
                   height={31}
                   style={{imageRendering: 'pixelated'}}
@@ -203,21 +203,24 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              <img
+              <Image
                   src="/banners/free_tech_tips.png"
+                  alt="Free Tech Tips Banner"
                   width={88}
                   height={31}
                   style={{imageRendering: 'pixelated'}}
               />
             </a>
-            <img
+            <Image
                 src="/banners/trans_rights.png"
+                alt="Trans Rights Banner"
                 width={88}
                 height={31}
                 style={{imageRendering: 'pixelated'}}
             />
-            <img
+            <Image
                 src="/banners/powered-by-debian.gif"
+                alt="Powered By Debian Banner"
                 width={88}
                 height={31}
                 style={{imageRendering: 'pixelated'}}
@@ -227,7 +230,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              <img
+              <Image
                   src="/banners/flag-progress.png"
                   alt="trans.fish"
                   width={88}
@@ -240,8 +243,9 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              <img
+              <Image
                   src="/banners/ublock-origin.png"
+                  alt="ublock origin Banner"
                   width={88}
                   height={31}
                   style={{imageRendering: 'pixelated'}}
@@ -291,8 +295,53 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              <img
+              <Image
                   src="/banners/lina.gif"
+                  alt={"Lina.sh Gif"}
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
+            <a
+                href="https://codeberg.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <Image
+                  src="/banners/codeberg.png"
+                  alt="Codeberg Logo"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
+            <Image
+                src="/banners/tom-scott.png"
+                alt="Tom Scott in a Web Badge"
+                width={88}
+                height={31}
+                style={{imageRendering: 'pixelated'}}
+            />
+            <a
+                href="https://aurakle.dev"
+                target="_blank"
+            >
+              <Image
+                  src="https://aurakle.dev/images/buttons/mine.webp"
+                  alt="The Starwatch Banner"
+                  width={88}
+                  height={31}
+                  style={{imageRendering: 'pixelated'}}
+              />
+            </a>
+            <a
+                href="https://freifunk.net/"
+                target="_blank"
+            >
+              <Image
+                  src="/banners/freifunk.png"
+                  alt="Freifunk Banner"
                   width={88}
                   height={31}
                   style={{imageRendering: 'pixelated'}}
