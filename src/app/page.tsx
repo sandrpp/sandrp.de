@@ -64,7 +64,7 @@ export default function Home() {
                 </button>
               </div>
 
-              <pre className="hidden sm:block text-[#873750] font-bold text-xs sm:text-sm md:text-base leading-tight mb-8 overflow-x-auto">
+              <pre className="hidden sm:flex text-[#873750] font-bold text-xs sm:text-sm md:text-base leading-tight mb-8 overflow-x-auto">
                 {`                                     _                    _      
                  ___  __ _ _ __   __| |_ __ _ __       __| | ___ 
                 / __|/ _\` | '_ \\ / _\` | '__| '_ \\     / _\` |/ _ \\
@@ -161,7 +161,36 @@ export default function Home() {
                   <span className="text-[10px] font-mono text-zinc-600">88x31px</span>
                 </div>
 
-                <div className="p-4 flex flex-col md:flex-row items-center gap-4">
+                <div className="p-4 sm:hidden">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="shrink-0">
+                      <Image
+                          src="/banners/sandrp.png"
+                          alt="sandrp.de banner"
+                          width={88}
+                          height={31}
+                          style={{ imageRendering: 'pixelated' }}
+                      />
+                    </div>
+
+                    <button
+                        onClick={handleCopy}
+                        className={`shrink-0 px-3 py-1.5 text-[10px] uppercase font-bold transition-all border h-fit whitespace-nowrap ${
+                            copied
+                                ? 'bg-[#d17780] text-black border-[#d17780]'
+                                : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780] cursor-pointer'
+                        }`}
+                    >
+                      {copied ? 'Copied!' : 'Copy Code'}
+                    </button>
+                  </div>
+
+                  <pre className="bg-black p-3 text-[9px] text-zinc-500 border border-zinc-900 overflow-x-auto font-mono scrollbar-thin scrollbar-thumb-zinc-800 leading-relaxed w-full">
+                    {bannerCode}
+                  </pre>
+                </div>
+
+                <div className="hidden sm:flex p-4 items-center gap-4">
                   <div className="shrink-0">
                     <Image
                         src="/banners/sandrp.png"
