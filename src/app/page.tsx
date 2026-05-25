@@ -101,7 +101,7 @@ export default function Home() {
                     <div>
                       <h1 className="text-xl font-bold text-white mb-1">Sandro</h1>
                       <p className="text-zinc-400">18 years old | any pronouns</p>
-                      <p className="text-zinc-400">founder of <a href="https://dezentrale-erkelenz.de" target="_blank" rel="noopener noreferrer" className="underline">Dezentrale Erkelenz i.Gr.</a></p>
+                      <p className="text-zinc-400">founder of <a href="https://dezentrale-erkelenz.de" target="_blank" rel="noopener noreferrer" className="underline text-[15px] md:text-base">Dezentrale Erkelenz</a></p>
                       <p className="text-zinc-400">you can find me there
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20" className="inline-block ml-1" style={{transform: 'translateY(-5px)'}}>
                           <path
