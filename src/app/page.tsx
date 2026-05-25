@@ -80,7 +80,7 @@ export default function Home() {
                   {/* Profilbild Bereich */}
                   <div className="w-32 h-32 border border-[#D6B53C] p-1 shrink-0 relative">
                     <Image
-                        src="/avatar.png" // Der Name deiner Datei im public-Ordner
+                        src="/avatar_purple.png"
                         alt="Sandro Avatar"
                         width={128}
                         height={128}
@@ -151,7 +151,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#0a0a0a] border border-zinc-800 p-4 group hover:border-[#FFE55C]/50 transition-colors">
                 <div className="flex items-center gap-3">
                   {/* Ein kleines Icon (Schlüssel-Symbol) */}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFE55C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg className={"w-6 h-6 shrink-0"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFE55C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M15 6v6h6l-2 2-2-2v6h-2v-2h-2v2h-2v-4a7 7 0 1 1 7-10Z"/>
                     <circle cx="9" cy="9" r="2" fill="#FFE55C"/>
                   </svg>
