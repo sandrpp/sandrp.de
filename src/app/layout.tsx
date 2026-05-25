@@ -14,11 +14,11 @@ export default function RootLayout({
                                    }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return (
-        <html lang="de">
-        <body className={`${jetbrainsMono.className} antialiased selection:bg-[#169C9C] selection:text-black`}>
-        {children}
-        </body>
-        </html>
-    );
+     return (
+         <html lang="de">
+         <body className={`${jetbrainsMono.className} antialiased selection:bg-[#bd4954] selection:text-black`}>
+         {children}
+         </body>
+         </html>
+     );
 }

@@ -6,7 +6,7 @@ import Oneko from "@/components/Oneko";
 // Kleine Hilfskomponente für die Kommandozeilen-Eingabe
 const Prompt = ({ command }: { command: string }) => (
     <div className="mt-8 mb-4">
-      <span className="text-[#FFE55C] font-bold">root@sandrp.de</span>
+      <span className="text-[#bd4954] font-bold">root@sandrp.de</span>
       <span className="text-zinc-500"> :~$ </span>
       <span className="text-zinc-100 font-semibold">{command}</span>
     </div>
@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
       // Der Haupt-Container erzwingt einen dunklen Hintergrund, da Terminal-Seiten dunkel sein sollten
-      <div className="relative min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-yellow-400/70 selection:text-black overflow-hidden">
+      <div className="relative min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-[#bd4954]/70 selection:text-black overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center blur-2xl scale-110"
           style={{
@@ -53,10 +53,10 @@ export default function Home() {
                   Why the hack did you do this?? You monster! The terminal is now closed and you can&apos;t see all the cool stuff I put there for you!
                 </p>
               </div>
-              <button
-                onClick={handleReopenTerminal}
-                className="px-3 py-1.5 bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#FFE55C] hover:text-[#FFE55C] border transition-all cursor-pointer"
-              >
+               <button
+                 onClick={handleReopenTerminal}
+                 className="px-3 py-1.5 bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#bd4954] hover:text-[#bd4954] border transition-all cursor-pointer"
+               >
                 im sorry :(
               </button>
             </div>
@@ -66,29 +66,29 @@ export default function Home() {
                 <span>{new Date().toLocaleTimeString('de-DE')} (Europe/Berlin) | sandrp.de</span>
                 <button
                   onClick={handleCloseTerminal}
-                  className="px-2 py-0.5 text-yellow-400 bg-yellow-400/10 border border-yellow-400/5 hover:border-yellow-400 transition-colors cursor-pointer"
+                  className="px-2 py-0.5 text-[#bd4954] bg-[#bd4954]/10 border border-[#bd4954]/5 hover:border-[#bd4954] transition-colors cursor-pointer"
                 >
                   x
                 </button>
               </div>
 
               <pre className="hidden lg:block font-bold text-xs sm:text-sm md:text-base lg:text-base leading-tight mb-8 overflow-x-auto text-left">
-                <span className="text-[#FCF434]">{`                        _                    _      \n`}</span>
-                <span className="text-[#FCF434]">{`   ___  __ _ _ __    __| |_ __ _ __       __| | ___ \n`}</span>
-                <span className="text-[#FFFFFF]">{`  / __|/ _\` | '_ \\ / _ | | '__| '_ \\     / _\` |/ _ \\\n`}</span>
-                <span className="text-[#9C59D1]">{`  \\__ \\ (_| | | | | (_|| | |  | |_) | _ | (_| |  __/\n`}</span>
-                <span className="text-[#4a4a4a]">{`  |___/\\__,_|_| |_|\\___|_|_|  | .__/ (_) \\__,_|\\___|\n`}</span>
-                <span className="text-[#4a4a4a]">{`                              |_|               `}</span>
+                <span className="text-[#bd4954]">{`                        _                    _      \n`}</span>
+                <span className="text-[#bd4954]">{`   ___  __ _ _ __    __| |_ __ _ __       __| | ___ \n`}</span>
+                <span className="text-[#bd4954]">{`  / __|/ _\` | '_ \\ / _ | | '__| '_ \\     / _\` |/ _ \\\n`}</span>
+                <span className="text-[#bd4954]">{`  \\__ \\ (_| | | | | (_|| | |  | |_) | _ | (_| |  __/\n`}</span>
+                <span className="text-[#bd4954]">{`  |___/\\__,_|_| |_|\\___|_|_|  | .__/ (_) \\__,_|\\___|\n`}</span>
+                <span className="text-[#bd4954]">{`                              |_|               `}</span>
               </pre>
 
               <Prompt command="glow about_me.md" />
-              <div className="border border-zinc-800 p-4 sm:p-6 relative bg-[#0a0a0a] hover:border-[#FFE55C]/50 transition-colors">
+                <div className="border border-zinc-800 p-4 sm:p-6 relative bg-[#0a0a0a] hover:border-[#bd4954]/50 transition-colors">
 
                 <div className="flex flex-col sm:flex-row gap-6 items-start">
-                  {/* Profilbild Bereich */}
-                  <div className="w-32 h-32 border border-[#D6B53C] p-1 shrink-0 relative">
+                   {/* Profilbild Bereich */}
+                   <div className="w-32 h-32 border border-[#bd4954] p-1 shrink-0 relative">
                     <Image
-                        src="/avatar_purple.png"
+                        src="/avatar.png"
                         alt="Sandro Avatar"
                         width={128}
                         height={128}
@@ -140,39 +140,30 @@ export default function Home() {
               </div>
 
               <Prompt command="./socials.sh" />
-              <div className="flex flex-col gap-2 pl-2 bg-[#0a0a0a] border border-zinc-800 p-4 group hover:border-[#FFE55C]/50 transition-colors relative">
-                <a href="https://github.com/sandrpp" className="hover:text-[#FFE55C] transition-colors w-max">
-                  <span className="text-zinc-500 mr-4">[gh]</span> github.com/sandrpp
-                </a>
-                <a href="#" className="hover:text-[#FFE55C] transition-colors w-max">
-                  <span className="text-zinc-500 mr-4">[dc]</span> @sandrp
-                </a>
-                <a href="mailto:me@sandrp.de" className="hover:text-[#FFE55C] transition-colors w-max">
-                  <span className="text-zinc-500 mr-4">[mail]</span> me@sandrp.de
-                </a>
-                <a href="https://matrix.to/#/@me:sandrp.de" className="hover:text-[#FFE55C] transition-colors w-max">
-                  <span className="text-zinc-500 mr-4">[matrix]</span> @me:sandrp.de
-                </a>
-
-                <Image
-                    className="hidden md:block absolute -bottom-5 right-10 text-white pointer-events-none stroke-current rotate-355"
-                    src={"/pins/pride_banner_cat.png"}
-                    alt={"Pride Banner"}
-                    width={256}
-                    height={64}
-                    style={{imageRendering: 'pixelated'}}
-                />
+               <div className="flex flex-col gap-2 pl-2 bg-[#0a0a0a] border border-zinc-800 p-4 group hover:border-[#bd4954]/50 transition-colors relative">
+                <a href="https://github.com/sandrpp" className="hover:text-[#bd4954] transition-colors w-max">
+                   <span className="text-zinc-500 mr-4">[gh]</span> github.com/sandrpp
+                 </a>
+                 <a href="#" className="hover:text-[#bd4954] transition-colors w-max">
+                   <span className="text-zinc-500 mr-4">[dc]</span> @sandrp
+                 </a>
+                 <a href="mailto:me@sandrp.de" className="hover:text-[#bd4954] transition-colors w-max">
+                   <span className="text-zinc-500 mr-4">[mail]</span> me@sandrp.de
+                 </a>
+                 <a href="https://matrix.to/#/@me:sandrp.de" className="hover:text-[#bd4954] transition-colors w-max">
+                   <span className="text-zinc-500 mr-4">[matrix]</span> @me:sandrp.de
+                 </a>
 
               </div>
 
               <Prompt command="curl https://sandrp.de/pgp.asc" />
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#0a0a0a] border border-zinc-800 p-4 group hover:border-[#FFE55C]/50 transition-colors">
-                <div className="flex items-center gap-3">
-                  {/* Ein kleines Icon (Schlüssel-Symbol) */}
-                  <svg className={"w-6 h-6 shrink-0"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFE55C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M15 6v6h6l-2 2-2-2v6h-2v-2h-2v2h-2v-4a7 7 0 1 1 7-10Z"/>
-                    <circle cx="9" cy="9" r="2" fill="#FFE55C"/>
-                  </svg>
+               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#0a0a0a] border border-zinc-800 p-4 group hover:border-[#bd4954]/50 transition-colors">
+                 <div className="flex items-center gap-3">
+                   {/* Ein kleines Icon (Schlüssel-Symbol) */}
+                   <svg className={"w-6 h-6 shrink-0"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#bd4954" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                     <path d="M15 6v6h6l-2 2-2-2v6h-2v-2h-2v2h-2v-4a7 7 0 1 1 7-10Z"/>
+                     <circle cx="9" cy="9" r="2" fill="#bd4954"/>
+                   </svg>
                   <div>
                     <span className="text-zinc-100 font-mono text-sm block">pgp.asc</span>
                     <span className="text-zinc-500 text-xs uppercase tracking-widest">Fingerprint: B55E E28C 143A C940 1CB2  65C0 A318 3B7B 8081 B136</span>
@@ -181,7 +172,7 @@ export default function Home() {
                 <a
                     href="/pgp.asc"
                     download
-                    className="mt-4 sm:mt-0 flex items-center gap-2 text-xs font-bold bg-zinc-900 text-zinc-400 border border-zinc-800 px-3 py-1.5 hover:border-[#FFE55C] hover:text-[#FFE55C] transition-all"
+                    className="mt-4 sm:mt-0 flex items-center gap-2 text-xs font-bold bg-zinc-900 text-zinc-400 border border-zinc-800 px-3 py-1.5 hover:border-[#bd4954] hover:text-[#bd4954] transition-all"
                 >
                   DOWNLOAD PGP
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -191,7 +182,7 @@ export default function Home() {
               </div>
 
               <Prompt command="curl https://sandrp.de/banner.html" />
-              <div className="border border-zinc-800 bg-[#0a0a0a] overflow-hidden group hover:border-[#FFE55C]/50 transition-colors">
+               <div className="border border-zinc-800 bg-[#0a0a0a] overflow-hidden group hover:border-[#bd4954]/50 transition-colors">
                 <div className="p-3 border-b border-zinc-800 bg-zinc-900/50 flex justify-between items-center">
                   <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400">My brand new Banner!</h3>
                   <span className="text-[10px] font-mono text-zinc-600">88x31px</span>
@@ -213,8 +204,8 @@ export default function Home() {
                         onClick={handleCopy}
                         className={`shrink-0 px-3 py-1.5 text-[10px] uppercase font-bold transition-all border h-fit whitespace-nowrap ${
                             copied
-                                ? 'bg-[#FFE55C] text-black border-[#FFE55C]'
-                                : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#FFE55C] hover:text-[#FFE55C] cursor-pointer'
+                                ? 'bg-[#bd4954] text-black border-[#bd4954]'
+                                : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#bd4954] hover:text-[#bd4954] cursor-pointer'
                         }`}
                     >
                       {copied ? 'Copied!' : 'Copy Code'}
@@ -243,14 +234,14 @@ export default function Home() {
                     </pre>
                   </div>
 
-                  <button
-                      onClick={handleCopy}
-                      className={`shrink-0 px-3 py-1 text-[10px] uppercase font-bold transition-all border h-fit ${
-                          copied
-                              ? 'bg-[#FFE55C] text-black border-[#FFE55C]'
-                              : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#FFE55C] hover:text-[#FFE55C] cursor-pointer'
-                      }`}
-                  >
+                   <button
+                       onClick={handleCopy}
+                       className={`shrink-0 px-3 py-1 text-[10px] uppercase font-bold transition-all border h-fit ${
+                           copied
+                               ? 'bg-[#bd4954] text-black border-[#bd4954]'
+                               : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#bd4954] hover:text-[#bd4954] cursor-pointer'
+                       }`}
+                   >
                     {copied ? 'Copied!' : 'Copy Code'}
                   </button>
                 </div>
