@@ -47,7 +47,7 @@ export default function Home() {
               </div>
               <button
                 onClick={handleReopenTerminal}
-                className="px-3 py-1.5 text-[#d17780] border border-[#d17780] hover:bg-[#d17780] hover:text-black transition-all cursor-pointer"
+                className="px-3 py-1.5 bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-[#d17780] hover:text-[#d17780] border transition-all cursor-pointer"
               >
                 im sorry :(
               </button>
@@ -58,7 +58,7 @@ export default function Home() {
                 <span>{new Date().toLocaleTimeString('de-DE')} (Europe/Berlin) | sandrp.de</span>
                 <button
                   onClick={handleCloseTerminal}
-                  className="text-red-500 bg-red-500/10 px-2 py-0.5 rounded cursor-pointer hover:bg-red-500 hover:text-white transition-colors border-none"
+                  className="px-2 py-0.5 text-red-500 bg-red-500/10 border border-red-500/5 hover:border-red-500 transition-colors rounded cursor-pointer"
                 >
                   x
                 </button>
@@ -145,7 +145,7 @@ export default function Home() {
                 <a
                     href="/pgp.asc"
                     download
-                    className="mt-4 sm:mt-0 flex items-center gap-2 text-xs font-bold text-[#d17780] border border-[#d17780] px-3 py-1.5 hover:bg-[#d17780] hover:text-black transition-all"
+                    className="mt-4 sm:mt-0 flex items-center gap-2 text-xs font-bold bg-zinc-900 text-zinc-400 border border-zinc-800 px-3 py-1.5 hover:border-[#d17780] hover:text-[#d17780] transition-all"
                 >
                   DOWNLOAD PGP
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
