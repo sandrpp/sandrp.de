@@ -33,10 +33,18 @@ export default function Home() {
 
   return (
       // Der Haupt-Container erzwingt einen dunklen Hintergrund, da Terminal-Seiten dunkel sein sollten
-      <div className="min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-yellow-400/70 selection:text-black">
+      <div className="relative min-h-screen bg-[#050505] text-zinc-300 p-4 sm:p-8 flex justify-center selection:bg-yellow-400/70 selection:text-black overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center blur-2xl scale-110"
+          style={{
+            backgroundImage: "url('/nebula.jpg')",
+            backgroundSize: "100% 100%",
+          }}
+        />
+        <div className="absolute inset-0 bg-black/70" />
         <Oneko />
         {/* Das "Terminal-Fenster" */}
-        <main className="w-full max-w-4xl flex flex-col ">
+        <main className="relative z-10 w-full max-w-4xl flex flex-col ">
           {terminalClosed ? (
             <div className="flex flex-col items-center justify-center gap-6 p-12 text-center min-h-96">
               <div>
@@ -69,8 +77,8 @@ export default function Home() {
                 <span className="text-[#FCF434]">{`   ___  __ _ _ __    __| |_ __ _ __       __| | ___ \n`}</span>
                 <span className="text-[#FFFFFF]">{`  / __|/ _\` | '_ \\ / _ | | '__| '_ \\     / _\` |/ _ \\\n`}</span>
                 <span className="text-[#9C59D1]">{`  \\__ \\ (_| | | | | (_|| | |  | |_) | _ | (_| |  __/\n`}</span>
-                <span className="text-[#2C2C2C]">{`  |___/\\__,_|_| |_|\\___|_|_|  | .__/ (_) \\__,_|\\___|\n`}</span>
-                <span className="text-[#2C2C2C]">{`                              |_|               `}</span>
+                <span className="text-[#4a4a4a]">{`  |___/\\__,_|_| |_|\\___|_|_|  | .__/ (_) \\__,_|\\___|\n`}</span>
+                <span className="text-[#4a4a4a]">{`                              |_|               `}</span>
               </pre>
 
               <Prompt command="glow about_me.md" />
@@ -80,7 +88,7 @@ export default function Home() {
                   {/* Profilbild Bereich */}
                   <div className="w-32 h-32 border border-[#D6B53C] p-1 shrink-0 relative">
                     <Image
-                        src="/avatar.png" // Der Name deiner Datei im public-Ordner
+                        src="/avatar_purple.png"
                         alt="Sandro Avatar"
                         width={128}
                         height={128}
@@ -132,7 +140,7 @@ export default function Home() {
               </div>
 
               <Prompt command="./socials.sh" />
-              <div className="flex flex-col gap-2 pl-2 bg-[#0a0a0a] border border-zinc-800 p-4 group hover:border-[#FFE55C]/50 transition-colors">
+              <div className="flex flex-col gap-2 pl-2 bg-[#0a0a0a] border border-zinc-800 p-4 group hover:border-[#FFE55C]/50 transition-colors relative">
                 <a href="https://github.com/sandrpp" className="hover:text-[#FFE55C] transition-colors w-max">
                   <span className="text-zinc-500 mr-4">[gh]</span> github.com/sandrpp
                 </a>
@@ -145,13 +153,23 @@ export default function Home() {
                 <a href="https://matrix.to/#/@me:sandrp.de" className="hover:text-[#FFE55C] transition-colors w-max">
                   <span className="text-zinc-500 mr-4">[matrix]</span> @me:sandrp.de
                 </a>
+
+                <Image
+                    className="hidden md:block absolute -bottom-5 right-10 text-white pointer-events-none stroke-current rotate-355"
+                    src={"/pins/pride_banner_cat.png"}
+                    alt={"Pride Banner"}
+                    width={256}
+                    height={64}
+                    style={{imageRendering: 'pixelated'}}
+                />
+
               </div>
 
               <Prompt command="curl https://sandrp.de/pgp.asc" />
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#0a0a0a] border border-zinc-800 p-4 group hover:border-[#FFE55C]/50 transition-colors">
                 <div className="flex items-center gap-3">
                   {/* Ein kleines Icon (Schlüssel-Symbol) */}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFE55C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg className={"w-6 h-6 shrink-0"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFE55C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M15 6v6h6l-2 2-2-2v6h-2v-2h-2v2h-2v-4a7 7 0 1 1 7-10Z"/>
                     <circle cx="9" cy="9" r="2" fill="#FFE55C"/>
                   </svg>
