@@ -187,6 +187,9 @@ export default function Home() {
                   <a href="https://matrix.to/#/@me:sandrp.de" className="hover:text-[#bd4954] transition-colors w-max">
                     <span className="text-zinc-500 mr-4">[matrix]</span> @me:sandrp.de
                   </a>
+                  <a href="https://discord.gg/32tpYxetAu" className="hover:text-[#bd4954] transition-colors w-max">
+                    <span className="text-zinc-500 mr-4">[dc-server]</span> "Water System"
+                  </a>
                 </div>
               </Window>
 
