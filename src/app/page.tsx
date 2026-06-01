@@ -115,7 +115,7 @@ export default function Home() {
                   className="lg:-translate-x-8 lg:-translate-y-4"
               >
                 {/* Nonbinary Flag relativ zum Haupt-Fenster */}
-                <a href="https://sandrp.de/" rel="noopener noreferrer">
+                <a href="https://pride.sandrp.de/" rel="noopener noreferrer">
                   <Image
                       className="absolute -top-8 -right-1 w-23 h-23 sm:-top-12 sm:-right-5 sm:w-[90px] sm:h-[90px] text-white z-20 rotate-12"                    src={"/pins/nonbinary_flag.png"}
                       alt={"Nonbinary Flag"}
@@ -124,7 +124,7 @@ export default function Home() {
                       style={{imageRendering: 'pixelated'}}
                   />
                 </a>
-                <div className="absolute -top-8 -right-1 w-full sm:-top-24 sm:-right-135 sm:w-full text-white z-20 rotate-348">
+                <div className="absolute w-md rotate-80 top-70 -right-57 lg:-top-23 lg:-right-125 lg:rotate-348 text-white z-20">
                   {"<- click me"}
                 </div>
 
