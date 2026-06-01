@@ -117,15 +117,20 @@ export default function Home() {
                   className="lg:-translate-x-8 lg:-translate-y-4"
               >
                 {/* Nonbinary Flag relativ zum Haupt-Fenster */}
-                <Image
-                    className="absolute -top-8 -right-1 w-23 h-23 sm:-top-12 sm:-right-5 sm:w-[90px] sm:h-[90px] text-white pointer-events-none z-20 rotate-12"                    src={"/pins/nonbinary_flag.png"}
-                    alt={"Nonbinary Flag"}
-                    width={90}
-                    height={90}
-                    style={{imageRendering: 'pixelated'}}
-                />
+                <a href="https://pride.sandrp.de/" rel="noopener noreferrer">
+                  <Image
+                      className="absolute -top-8 -right-1 w-23 h-23 sm:-top-12 sm:-right-5 sm:w-[90px] sm:h-[90px] text-white z-20 rotate-12"                    src={"/pins/nonbinary_flag.png"}
+                      alt={"Nonbinary Flag"}
+                      width={90}
+                      height={90}
+                      style={{imageRendering: 'pixelated'}}
+                  />
+                </a>
+                <div className="absolute -top-8 -right-1 w-full sm:-top-24 sm:-right-135 sm:w-full text-white z-20 rotate-348">
+                  {"<- click me"}
+                </div>
 
-                {/* Angepasste Schriftgröße */}
+                    {/* Angepasste Schriftgröße */}
                 <pre className="hidden sm:block font-bold text-[10px] lg:text-[11px] xl:text-xs leading-tight mb-8 text-left whitespace-pre overflow-hidden w-full">
                   <span className="text-[#bd4954]">{`                        _                    _      \n`}</span>
                   <span className="text-[#bd4954]">{`   ___  __ _ _ __    __| |_ __ _ __       __| | ___ \n`}</span>
