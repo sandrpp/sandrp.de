@@ -128,10 +128,10 @@ export default function Home() {
                 <pre className="hidden sm:block font-bold text-[10px] lg:text-[11px] xl:text-xs leading-tight mb-8 text-left whitespace-pre overflow-hidden w-full">
                   <span className="text-[#FCF434]">{`                        _                    _      \n`}</span>
                   <span className="text-[#FCF434]">{`   ___  __ _ _ __    __| |_ __ _ __       __| | ___ \n`}</span>
-                  <span className="text-[#FFFFFF]">{`  / __|/ _\` | '_ \ / _ | | '__| '_ \     / _\` |/ _ \\\n`}</span>
+                  <span className="text-[#FFFFFF]">{`  / __|/ _\` | '_ \\ / _ | | '__| '_ \\     / _\` |/ _ \\\n`}</span>
                   <span className="text-[#9C59D1]">{`  \\__ \\ (_| | | | | (_|| | |  | |_) | _ | (_| |  __/\n`}</span>
                   <span className="text-[#4a4a4a]">{`  |___/\\__,_|_| |_|\\___|_|_|  | .__/ (_) \\__,_|\\___|\n`}</span>
-                  <span className="text-[#4a4a4a]">{`                              |_|               `}</span>
+                  <span className="text-[#4a4a4a]">{`                              |_|                    `}</span>
                 </pre>
 
                 <div className="flex flex-col sm:flex-row gap-6 items-start w-full">
@@ -191,7 +191,7 @@ export default function Home() {
 
                   {/* Pride Cat Banner aus dem alten Design hier integriert */}
                   <Image
-                      className="hidden md:block absolute -bottom-4 right-2 text-white pointer-events-none stroke-current rotate-[355deg] opacity-80"
+                      className="hidden md:block absolute -bottom-4 -right-4 text-white pointer-events-none stroke-current rotate-[355deg] opacity-80"
                       src="/pins/pride_banner_cat.png"
                       alt="Pride Banner"
                       width={200}
